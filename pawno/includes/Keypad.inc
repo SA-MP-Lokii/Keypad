@@ -25,7 +25,8 @@
 		        	
 			Version 1.3
 	Changes:
-	            Optimized script
+	            Optimized script,
+		    Fixed small mistake
 */
 
 #include <foreach> //credits to y_less
@@ -253,7 +254,7 @@ hook OnPlayerClickTextDraw(playerid, Text:clickedid)
 					TextDrawHideForPlayer(playerid, TD_KeyPad[11]);
 					TextDrawShowForPlayer(playerid, TD_KeyPad[13]);
 					kp_ptimer[playerid] = SetTimerEx("KEYPAD_DONE", 1000, false, "i", playerid);
-					OnKeypadResponse(playerid, kp_id[playerid], false, false, KP_PlayerText[playerid]);
+					OnKeypadResponse(playerid, kp_id[playerid], true, false, KP_PlayerText[playerid]);
 					kp_id[playerid] = -1;
      				KP_PlayerText[playerid] = "";
 				}
